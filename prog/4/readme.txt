@@ -1,5 +1,5 @@
 //// HELLO THERE ////
 
-These exercices were focused on [FUNCTIONS]
+These exercises were focused on [FUNCTIONS]
 
 //// //// //// //// ////
