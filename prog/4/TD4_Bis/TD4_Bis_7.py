@@ -1,3 +1,4 @@
+#Unlimited Country->Capital Finder (Pre-filled)
 from TD4_Bis_func import *
 countryList = ["France", "Italie", "Espagne", "Allemagne", "Pologne", "République Tchèque", "Angleterre", "Portugal", "Pays-Bas"]
 capitalList = ["Paris", "Rome", "Madrid", "Berlin", "Varsovie", "Prague", "Londre", "Lisbonne", "Amsterdam"]
