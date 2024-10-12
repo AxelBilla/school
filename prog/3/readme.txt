@@ -1,5 +1,5 @@
 //// HELLO THERE ////
 
-These exercices were focused on [LOOPS]
+These exercises were focused on [LOOPS]
 
 //// //// //// //// ////
