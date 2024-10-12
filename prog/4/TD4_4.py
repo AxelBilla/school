@@ -1,3 +1,4 @@
+#Seth Rogan
 from TD4_func import *
 userInputs = []
 count=0
