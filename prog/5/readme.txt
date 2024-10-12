@@ -1,5 +1,5 @@
 //// HELLO THERE ////
 
-These exercices were focused on [LISTS]
+These exercises were focused on [LISTS]
 
 //// //// //// //// ////
