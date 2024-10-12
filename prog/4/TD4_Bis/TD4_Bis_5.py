@@ -1,3 +1,4 @@
+#Infinite Currency Conv. (Rates are BS, didn't bother putting real ones)
 from TD4_Bis_func import *
 power=True
 while power == True:
