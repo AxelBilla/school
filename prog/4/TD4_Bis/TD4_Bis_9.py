@@ -1,3 +1,4 @@
+#Multiply by 3 then 6 then 9 a given number (just copy pasted shit lol)
 from TD4_Bis_func import *
 qubert=0
 
