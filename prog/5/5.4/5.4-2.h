@@ -11,12 +11,13 @@ struct product {
 	string label;
 	int amount;
 	float buyPrice;
+	float noTaxPrice;
 	float sellPrice;
 };
 
 int stockDisplay(vector<product> stockList);
-product ProductAdd(string labelName);
-product StockAdd(product item, string labelName);
+product ProductAdd(string labelName, float margin);
+product StockAdd(product item, string labelName, float margin);
 product StockRem(product item);
 
 #endif

@@ -1,6 +1,7 @@
 #include "5.4-2.h"
 
 int main() {
+	float margin = 1.1;
 	int reply;
 	int p;
 	bool check;
@@ -25,13 +26,13 @@ int main() {
 			check = true;
 			for (auto const& v : stock) {
 				if (v.label == labelName) {
-					stock[p] = StockAdd(stock[p], labelName);
+					stock[p] = StockAdd(stock[p], labelName, margin);
 					check = false;
 				}
 				p = p + 1;
 			};
 			if (check) {
-				newItem = ProductAdd(labelName);
+				newItem = ProductAdd(labelName, margin);
 				stock.push_back(newItem);
 			};
 			continue;

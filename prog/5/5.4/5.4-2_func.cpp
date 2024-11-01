@@ -7,12 +7,12 @@ int stockDisplay(vector<product> stockList) {
 	}
 	for (auto const &v : stockList) {
 		i = i + 1;
-		cout << "\n[ Product #" << i << " ]\n"<< "------------------" << "\n|-Label: " << v.label << "\n|-Quantity: " << v.amount << "\n|-Buy Price: " << v.buyPrice << " EUR" << "\n|-Sell Price: " << v.sellPrice << " EUR\n------------------\n\n";
+		cout << "\n[ Product #" << i << " ]\n"<< "------------------" << "\n|-Label: " << v.label << "\n|-Quantity: " << v.amount << "\n|-Buy Price: " << v.buyPrice << " EUR" << "\n|-Untaxed Price: " << v.noTaxPrice << " EUR" << "\n|-Sell Price: " << v.sellPrice << " EUR\n------------------\n\n";
 	}
 	return 0;
 }
 
-product ProductAdd(string labelName) {
+product ProductAdd(string labelName, float margin) {
 	product received;
 	received.label = labelName;
 	received.amount = -1; received.buyPrice = -1;
@@ -24,11 +24,12 @@ product ProductAdd(string labelName) {
 		cout << "Price: ";
 		cin >> received.buyPrice;
 	}
-	received.sellPrice = received.buyPrice * 1.56;
+	received.noTaxPrice = received.buyPrice * margin;
+	received.sellPrice = received.noTaxPrice * 1.56;
 	return received;
 }
 
-product StockAdd(product item,string labelName) {
+product StockAdd(product item,string labelName, float margin) {
 	int addedAmount = -1;
 	float addedPrice = -1;
 	while (addedAmount < 0) {
@@ -41,7 +42,9 @@ product StockAdd(product item,string labelName) {
 	}
 	if (addedPrice != 0) {
 		item.buyPrice = (((item.buyPrice * item.amount) + (addedAmount * addedPrice)) / (item.amount + addedAmount));
-		item.sellPrice = item.buyPrice * 1.56;
+		item.noTaxPrice = item.buyPrice * margin;
+		item.sellPrice = item.noTaxPrice * 1.56;
+
 	}
 	item.amount = item.amount + addedAmount;
 	return item;
