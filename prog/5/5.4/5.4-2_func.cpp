@@ -40,7 +40,7 @@ product StockAdd(product item,string labelName, float margin) {
 		cout << "Added Price: ";
 		cin >> addedPrice;
 	}
-	if (addedPrice != 0) {
+	if (addedAmount != 0) {
 		item.buyPrice = (((item.buyPrice * item.amount) + (addedAmount * addedPrice)) / (item.amount + addedAmount));
 		item.noTaxPrice = item.buyPrice * margin;
 		item.sellPrice = item.noTaxPrice * 1.56;
