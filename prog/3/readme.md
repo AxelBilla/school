@@ -2,6 +2,6 @@
 
 These exercises were focused on [LOOPS]
 
-BTW, only the Bis here since I did the regular ones directly on the doc (alg)
+BTW, only the Bis here since I wrote down the regular ones on the doc (alg)
 
 //// //// //// //// ////
