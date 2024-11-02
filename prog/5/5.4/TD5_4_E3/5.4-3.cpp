@@ -69,7 +69,7 @@ int main()
 
 		case 5:
 			while (!check) {
-				cout << "\n\nFrom when do you want to start checking?\n\n";
+				cout << "\n\nBefore which date do you want to start checking?\n\n";
 				searchDate=createDate();
 				i = 0;
 				for (auto const& v : borrowalsList) {
