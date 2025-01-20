@@ -28,7 +28,7 @@ class badRestaurant: public restaurant { // Creates a class of "badRestaurant", 
 	private:
 		string comm;
 	public:
-		badRestaurant(string z, string d) : restaurant(d, z){ //Get the args from the child's constructor, which we then pass to the parent's constructor to handle (here the first constructor that sets only the name & address is used, which means our "d" variable is "newName" & our "z" variable is "newAddress"), but we can still use those args on our child's constructor (here, "z" is both used for the child's "comm" attribute & the "address" attribute inherited from its parent)
+		badRestaurant(string z, string d) : restaurant(d, z){ //Get the args from the child's constructor, which we then pass to the parent's constructor to handle (here the first constructor that sets only the name & address is used, which means our "d" variable is "newName" & our "z" variable is "newAddress"), but we can still use those args on our child's constructor (here, "z" is both used for the child's "comm" attribute & the "address" attribute inherited from its parent) | Made by Axel B.
 			this->comm=z;
 		}
 		void sayVomit(){
