@@ -7,9 +7,6 @@ class bkGenre {
         string tag;
         bkShelf *shelf;
         vector<bkBook*> books;
-        int getShelf(string bookTitle){
-            return 0;
-        }
     public:
         bkGenre() = default;
         bkGenre(string newTag, bkShelf *newShelf) {
