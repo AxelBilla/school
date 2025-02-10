@@ -17,7 +17,7 @@ class Gun : public IProjectile{
             cout << "\nPAN PAN PAN! You shot a bullet!";
             this->bullets-=3;
         }
-        int getAmmo(){return this->bullets;}
+        int getAmmo(){return this->bullets;} // "override" isn't necessary as the compiler will understand we're overriding the "getAmmo" virtual method, but it's good practice to still use it.
 };
 
 class Bow : public IProjectile{
@@ -29,7 +29,7 @@ class Bow : public IProjectile{
             cout << "\nFWOOSH! You shot an arrow!";
             this->arrows-=1;
         }
-        int getAmmo(){return this->arrows;}
+        int getAmmo(){return this->arrows;} // "override" isn't necessary as the compiler will understand we're overriding the "getAmmo" virtual method, but it's good practice to still use it.
 
 };
 
