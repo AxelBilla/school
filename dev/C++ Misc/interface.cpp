@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class IProjectile{
+class IProjectile{ // "I" = Interface, this is our Projectile Interface. The interface we'll use for our projectile-throwing weapon classes.
     public:
         virtual void shoot() = 0; // Must be implemented by any class that inherits "IProjectile"
         virtual int getAmmo() = 0; // Must be implemented by any class that inherits "IProjectile"                     | Made by Axel B.
