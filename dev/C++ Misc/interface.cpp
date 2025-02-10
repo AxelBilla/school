@@ -5,7 +5,7 @@ using namespace std;
 class IProjectile{ // "I" = Interface, this is our Projectile Interface. The interface we'll use for our projectile-throwing weapon classes.
     public:
         virtual void shoot() = 0; // Must be implemented by any class that inherits "IProjectile"
-        virtual int getAmmo() = 0; // Must be implemented by any class that inherits "IProjectile"                     | Made by Axel B.
+        virtual int getAmmo() = 0; // Must be implemented by any class that inherits "IProjectile"
 };
 
 class Gun : public IProjectile{
@@ -17,7 +17,7 @@ class Gun : public IProjectile{
             cout << "\nPAN PAN PAN! You shot a bullet!";
             this->bullets-=3;
         }
-        int getAmmo(){return this->bullets;} // "override" isn't necessary as the compiler will understand we're overriding the "getAmmo" virtual method, but it's good practice to still use it.
+        int getAmmo(){return this->bullets;} // "override" isn't necessary as the compiler will understand we're overriding the "getAmmo" virtual method, but it's good practice to still use it. | Made by Axel B.
 };
 
 class Bow : public IProjectile{
