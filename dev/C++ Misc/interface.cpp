@@ -5,7 +5,7 @@ using namespace std;
 class IProjectile{
     public:
         virtual void shoot() = 0; // Must be implemented by any class that inherits "IProjectile"
-        virtual int getAmmo() = 0; // Must be implemented by any class that inherits "IProjectile"
+        virtual int getAmmo() = 0; // Must be implemented by any class that inherits "IProjectile"                     | Made by Axel B.
 };
 
 class Gun : public IProjectile{
