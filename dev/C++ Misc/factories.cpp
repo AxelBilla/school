@@ -15,7 +15,7 @@ class Weapon{ // Create our "Weapon" class
         }
 };
 
-class WeaponFactory{ //Class made out of a "static" method, meant merely to avoid "main" (the script the client can see) from accessing the constructor of "Weapon"
+class WeaponFactory{ //Class made out of a "static" method, meant merely to avoid "main" (substitute for the script the client can see) from accessing the constructor of "Weapon"
     public:
         static Weapon* createWeapon(int dmg) {return new Weapon(dmg);} // Calls our "Weapon" class's constructor with the arguments we gave it.
 };
