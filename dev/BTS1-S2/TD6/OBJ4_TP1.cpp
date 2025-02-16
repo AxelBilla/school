@@ -143,7 +143,7 @@ public:
     void refill(string fuelName, int capacity) {
         for (int i = 0; i < myStations.size(); i++) {
             if (this->myStations[i]->findFuel(fuelName)) {
-                this->myStations[i]->setAvailable(fuelName, capacity); // UML's doc said it had to take away what we inputted
+                this->myStations[i]->setAvailable(fuelName, capacity);
             }
         }
     }
