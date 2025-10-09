@@ -12,8 +12,8 @@ public class Cart{
     public void addProduct(Product product, int quantity){
         Pair<int, float> product_values = new Pair<int, float>(quantity, product.price);
 
-        if(!this.product.ContainsKey(product.reference)) this.product.Add(product.reference, product_values);
-        else this.product[product.reference].first += quantity;
+        if(!this.products.ContainsKey(product.reference)) this.products.Add(product.reference, product_values);
+        else this.products[product.reference].first += quantity;
     }
 
     public float getTotal(){
@@ -26,9 +26,11 @@ public class Cart{
 
     public float getPromotions(){
         float promo = 0.5f; // 50%
+		int perProduct = 2; // When to give discount
+		
         float total = 0f;
         foreach(Pair<int, float> product_info in this.products.Values){
-            total+= ((int) product_info.first/2)*product_info.second;
+            total+= ((int)(product_info.first / perProduct))*(product_info.second*promo);
         }
         return total;
     }

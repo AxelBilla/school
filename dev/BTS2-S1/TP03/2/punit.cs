@@ -1,4 +1,6 @@
 // MADE UP UNIT TEST CUZ I CAN'T INSTALL VS ON SCHOOL COMPUTERS
+using System.Collections.Generic;
+
 public static class Assert
 {
     public static bool AreEqual<T>(T expected, T actual, string message){
@@ -15,11 +17,8 @@ public static class Assert
     }
 
     public static bool HasKey<A,B>(Dictionary<A,B> array, A key, string message){
-        if (array.ContainsKey(key))
-        {
-            Console.WriteLine(message);
-            return true;
-        }
+        if (array.ContainsKey(key)) return true;
+		Console.WriteLine(message);
         return false;
     }
 }
