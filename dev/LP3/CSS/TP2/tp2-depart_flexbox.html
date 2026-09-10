@@ -1,0 +1,212 @@
+<!--
+  ☑ Aucun `float` ni `position: absolute` dans le fichier 
+  ☑ Bouton "Nous contacter" poussé à droite via `margin-left: auto`
+  ☑ Cartes espacées avec `gap`, pas de `margin` manuel entre elles
+  ☑ Cartes de même hauteur, contenu aligné en colonne
+  ☑ Bouton "Choisir" toujours en bas de carte
+  ☑ Cartes passent à la ligne sur petit écran (`flex-wrap`)
+  ☑ Pied de page sur une ligne, liens sociaux espacés régulièrement
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Agence Perspective — Tarifs</title>
+<style>
+  :root {
+    --color-primary: #1b3a4b;
+    --color-accent: #f0a35e;
+    --color-text: #333333;
+    --color-text-light: #555555;
+    --color-border: #cccccc;
+    --space-sm: 0.625rem;
+    --space-md: 1.25rem;
+    --radius: 6px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+  }
+
+  header {
+    background: var(--color-primary);
+    padding: var(--space-md);
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    padding: var(--space-sm) 1.125rem;
+    border: 1px solid #ffffff;
+    border-radius: var(--radius);
+    display: inline-block;
+  }
+
+  /* ---------------------------------------------------------
+     À VOUS DE JOUER : tout ce qui suit est en flux normal.
+     N'ajoutez QUE des propriétés Flexbox (display, flex-*,
+     justify-content, align-items, gap) — pas de float,
+     pas de position: absolute.
+     --------------------------------------------------------- */
+
+  .toolbar {
+    display: flex;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .toolbar h2 {
+    margin: 0;
+    color: var(--color-primary);
+  }
+
+  .toolbar .btn-contact {
+    background: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .plans {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: var(--space-md);
+
+  }
+
+  .plan {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    width: 280px;
+  }
+
+  .plan h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+  }
+
+  .plan .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent);
+  }
+
+  .plan p {
+    color: var(--color-text-light);
+    line-height: 1.4;
+  }
+
+  .plan .btn-choose {
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    width: 100%;
+    cursor: pointer;
+
+    margin-top: auto;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: var(--space-md);
+    font-size: 0.875rem;
+  }
+
+  footer .socials {
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  footer .socials li {
+    display: inline;
+    margin: var(--space-sm);
+  }
+
+  footer .socials a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Réalisations</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="toolbar">
+    <h2>Nos formules</h2>
+    <button class="btn-contact">Nous contacter</button>
+  </div>
+
+  <main class="plans">
+    <div class="plan">
+      <h3>Essentiel</h3>
+      <p class="price">490 €/mois</p>
+      <p>Idéal pour démarrer : un site vitrine responsive, hébergement inclus et une maintenance de base.</p>
+      <button class="btn-choose">Choisir</button>
+    </div>
+
+    <div class="plan">
+      <h3>Pro</h3>
+      <p class="price">990 €/mois</p>
+      <p>Pour les équipes en croissance : application web sur mesure, intégration API et suivi mensuel dédié avec un chef de projet.</p>
+      <button class="btn-choose">Choisir</button>
+    </div>
+
+    <div class="plan">
+      <h3>Entreprise</h3>
+      <p class="price">Sur devis</p>
+      <p>Accompagnement complet, SLA garanti, audit de sécurité.</p>
+      <button class="btn-choose">Choisir</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Agence Perspective — Tous droits réservés.</p>
+    <ul class="socials">
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">GitHub</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

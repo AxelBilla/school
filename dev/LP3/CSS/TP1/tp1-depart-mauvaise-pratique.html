@@ -1,0 +1,132 @@
+<!--
+  ☑ `box-sizing: border-box` appliqué globalement
+  ☑ Aucun `!important` restant
+  ☑ Sélecteurs simplifiés (2 niveaux max)
+  ☑ `rem` utilisés pour polices/espacements
+  ☑ Variables CSS déclarées et réutilisées
+  ☑ Navigation en Flexbox, sans `float` ni clearfix
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Agence Perspective — À corriger</title>
+<style>
+  :root{
+    --primary-color : #1b3a4b;
+    --accentuation-color : #f0a35e;
+    --emtpy-background-color : #ffffff;
+    --darkened-border: #cccccc;
+    --text : #555555;
+    --small-spacing : 0.6rem;
+  }
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  #header {
+    background: var(--primary-color);
+    padding: 1.25rem;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: 0.85rem;
+      
+      a {
+        color: var(--emtpy-background-color);
+        text-decoration: none;
+        font-size: 1rem;
+        padding: var(--small-spacing) 1.125rem;
+        width: 100px;
+        border: 1px solid var(--emtpy-background-color);
+      }
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .card {
+    width: 300px;
+    padding: 20px;
+    margin: var(--small-spacing);
+    border: 1px solid var(--darkened-border);
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+    };
+
+    p {
+      color: var(--text);
+      line-height: 20px;
+    }
+  }
+  
+  .btn {
+    background: var(--accentuation-color);
+    color: var(--emtpy-background-color);
+    padding: var(--small-spacing) 1.3rem;
+    border: none;
+    font-size: 1rem;
+    margin-top: var(--small-spacing);
+  }
+  #footer {
+    background: var(--primary-color);
+    color: var(--emtpy-background-color);
+    padding: 1.2rem;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <header id="header">
+    <ul class="nav">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Réalisations</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <main id="main">
+    <div class="content">
+      <div class="card">
+        <h3>Développement Web</h3>
+        <p>Sites vitrines, applications métier et plateformes e-commerce sur mesure.</p>
+        <button class="btn">En savoir plus</button>
+      </div>
+      <div class="card">
+        <h3>Applications Mobiles</h3>
+        <p>Applications natives et hybrides pour iOS et Android.</p>
+        <button class="btn">En savoir plus</button>
+      </div>
+      <div class="card">
+        <h3>Conseil &amp; Audit</h3>
+        <p>Audit technique, accessibilité et performance de vos interfaces existantes.</p>
+        <button class="btn">En savoir plus</button>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <p>&copy; 2026 Agence Perspective — Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

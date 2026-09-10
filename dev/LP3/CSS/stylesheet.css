@@ -1,0 +1,71 @@
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .separator{
+
+    display: flex;
+    justify-content: center;
+
+    margin:0;
+    width: 100%;
+  }
+
+  table{
+    border-collapse:collapse;
+
+    td{
+    border: 2px solid black;
+      width: 10vw;
+      height: 10vh;
+    };
+  };
+
+  one table{
+    [colspan="2"]{
+        background-color: cyan;
+    };
+    [colspan="3"]{
+        background-color: orange;
+    };
+  }
+
+  three table{
+    tr:nth-child(even) td:nth-child(even) {background-color: black;}
+    tr:nth-child(odd) td:nth-child(odd) {background-color: black;}
+  }
+
+  two{
+    height: 20vh;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+
+    label{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      width: 20vw;
+      height: 100%;
+
+      p{
+        align-content: center;
+        margin: 0;
+        width: 100%;
+        font-size: 5vw;
+      }
+
+      input{
+        width: 100%;
+        margin: 0;
+      }
+    }
+    label:has(input[type="checkbox"]:checked){
+      p{background-color: blue;}
+      p::after{
+          content: "+";
+      }
+    }
+  }
+}

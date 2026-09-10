@@ -1,0 +1,271 @@
+<!--
+  ☑ Nav : logo fixe, liens non rétrécissables, CTA poussé à droite 
+  ☑ Cartes de service : `flex-wrap`, `gap`, base 220px minimum
+  ☑ Équipe : photo `flex: none`, texte `flex: 1` avec `min-width: 0` 
+  ☑ Page : `body` en colonne, `main` en `flex-grow: 1`, footer toujours en bas 
+  ☑ Aucun `float` ni `position: absolute` dans le fichier 
+  ☑ Cartes passent à la ligne sur petit écran (`flex- wrap`) 
+  ☑ Commentaire de tête listant les patterns utilisés
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Agence Perspective — Accueil</title>
+<style>
+  :root {
+    --color-primary: #1b3a4b;
+    --color-accent: #f0a35e;
+    --color-text: #333333;
+    --color-text-light: #555555;
+    --color-border: #cccccc;
+    --space-sm: 0.625rem;
+    --space-md: 1.25rem;
+    --space-lg: 2rem;
+    --radius: 6px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+    /* TODO pattern D : body doit devenir un conteneur flex en colonne,
+       min-height: 100vh, pour permettre le sticky footer */
+  }
+
+  /* ---------------------------------------------------------
+     NAVIGATION — pattern A
+     --------------------------------------------------------- */
+  header {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    
+    justify-content: flex-start;
+    
+    background: var(--color-primary);
+    padding: var(--space-md) var(--space-lg);
+    /* TODO : display flex, aligner verticalement, gap */
+  }
+
+  .logo {
+    flex-shrink: 0;
+    
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: bold;
+    /* TODO : ne doit jamais rétrécir */
+  }
+
+  nav ul {
+    display: flex;
+    flex-shrink: 0;
+    gap: 2rem;
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* TODO : display flex, gap, ne doit jamais rétrécir */
+  }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .btn-cta {
+    margin-left: auto;
+
+    background: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    cursor: pointer;
+    /* TODO : poussé à droite */
+  }
+
+  /* ---------------------------------------------------------
+     CONTENU PRINCIPAL — pattern D (flex-grow)
+     --------------------------------------------------------- */
+  main {
+    /* TODO : flex-grow pour absorber l'espace vertical restant */
+    flex-grow: 1;
+    
+    padding: var(--space-lg);
+  }
+
+  .hero {
+    text-align: center;
+    padding: var(--space-lg) 0;
+  }
+
+  .hero h1 {
+    color: var(--color-primary);
+  }
+
+  /* ---------------------------------------------------------
+     SERVICES — pattern B
+     --------------------------------------------------------- */
+  .services {
+    /* TODO : display flex, wrap, gap */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+    margin-top: var(--space-lg);
+  }
+
+  .service-card {
+    flex: 1 1 220px;
+    
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    /* TODO : flex 1 1 220px */
+  }
+
+  .service-card h3 {
+    color: var(--color-primary);
+  }
+
+  .service-card p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* ---------------------------------------------------------
+     ÉQUIPE — pattern E (media object)
+     --------------------------------------------------------- */
+  .team {
+    margin-top: var(--space-lg);
+  }
+
+  .team-member {
+    display: flex;
+    flex: 1;
+    gap: 2rem;
+    align-items: flex-start;
+    /* TODO : display flex, gap, align-items flex-start */
+    margin-bottom: var(--space-md);
+  }
+
+  .team-member .avatar {
+    flex: none;
+    
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    /* TODO : ne doit jamais rétrécir */
+  }
+
+  .team-member .info h4 {
+    margin: 0 0 0.25rem;
+    color: var(--color-primary);
+  }
+
+  .team-member .info p {
+    min-width: 0;
+    
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    /* TODO : min-width: 0 pour éviter le débordement */
+  }
+
+  /* ---------------------------------------------------------
+     PIED DE PAGE
+     --------------------------------------------------------- */
+  footer {
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: var(--space-md) var(--space-lg);
+    text-align: center;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Perspective</div>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Équipe</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn-cta">Démarrer un projet</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Nous construisons vos produits numériques</h1>
+      <p>Applications web, mobiles et conseil technique — de l'idée au déploiement.</p>
+    </section>
+
+    <section class="services">
+      <div class="service-card">
+        <h3>Développement Web</h3>
+        <p>Sites vitrines, applications métier et plateformes e-commerce sur mesure.</p>
+      </div>
+      <div class="service-card">
+        <h3>Applications Mobiles</h3>
+        <p>Applications natives et hybrides pour iOS et Android.</p>
+      </div>
+      <div class="service-card">
+        <h3>Conseil &amp; Audit</h3>
+        <p>Audit technique, accessibilité et performance de vos interfaces existantes.</p>
+      </div>
+      <div class="service-card">
+        <h3>Formation</h3>
+        <p>Ateliers CSS, Flexbox et Grid pour vos équipes de développement.</p>
+      </div>
+    </section>
+
+    <section class="team">
+      <h2>L'équipe</h2>
+      <div class="team-member">
+        <div class="avatar"></div>
+        <div class="info">
+          <h4>Léa Girard</h4>
+          <p>Directrice technique — 12 ans d'expérience en architecture front-end, spécialiste de l'accessibilité et des design systems.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="avatar"></div>
+        <div class="info">
+          <h4>Karim Belkacem</h4>
+          <p>Développeur mobile.</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="avatar"></div>
+        <div class="info">
+          <h4>Sofia Moreau</h4>
+          <p>Cheffe de projet, garante de la relation client et du respect des délais.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Agence Perspective — Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
